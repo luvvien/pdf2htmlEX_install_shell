@@ -20,7 +20,7 @@
 
 HOME_PATH=$(cd ~/ && pwd)
 LINUX_ARCH="$(lscpu | grep 'Architecture' | awk -F\: '{ print $2 }' | tr -d ' ')"
-POPPLER_SOURCE="http://poppler.freedesktop.org/poppler-0.33.0.tar.xz"
+POPPLER_SOURCE="http://poppler.freedesktop.org/poppler-0.62.0.tar.xz"
 FONTFORGE_SOURCE="https://github.com/fontforge/fontforge.git"
 PDF2HTMLEX_SOURCE="https://github.com/coolwanglu/pdf2htmlEX.git"
 
@@ -35,8 +35,8 @@ apt-get install -qq -y pkg-config libopenjpeg-dev libfontconfig1-dev libfontforg
 
   echo "Downloading poppler via source ..."
 wget "$POPPLER_SOURCE"
-tar -xvf poppler-0.33.0.tar.xz
-cd poppler-0.33.0/
+tar -xvf poppler-0.62.0.tar.xz
+cd poppler-0.62.0/
 ./configure --enable-xpdf-headers
 make
 make install
@@ -64,8 +64,8 @@ sudo make install
 echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 source ~/.bashrc
 
-cd "$HOME_PATH" && rm -rf "poppler-0.33.0.tar.xz"
-cd "$HOME_PATH" && rm -rf "poppler-0.33.0"
+cd "$HOME_PATH" && rm -rf "poppler-0.62.0.tar.xz"
+cd "$HOME_PATH" && rm -rf "poppler-0.62.0"
 cd "$HOME_PATH" && rm -rf "fontforge"
 cd "$HOME_PATH" && rm -rf "pdf2htmlEX"
 
@@ -73,6 +73,6 @@ else
   echo "********************************************************************"
   echo "This script currently doesn't supports $LINUX_ARCH Linux archtecture"
 fi
- 
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH 
 echo "----------------------------------"
 echo "Restart your Ubuntu session for installation to complete..."
