@@ -51,7 +51,7 @@ cd fontforge/
 ./bootstrap
 ./configure
 make
-sudo make install
+make install
 
   echo "Installing Pdf2htmlEx ..."
 cd "$HOME_PATH"
@@ -59,7 +59,7 @@ git clone --depth 1 "$PDF2HTMLEX_SOURCE"
 cd pdf2htmlEX/
 cmake .
 make
-sudo make install
+make install
 
 echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 source ~/.bashrc
@@ -73,6 +73,6 @@ else
   echo "********************************************************************"
   echo "This script currently doesn't supports $LINUX_ARCH Linux archtecture"
 fi
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH 
+# export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH 
 echo "----------------------------------"
 echo "Restart your Ubuntu session for installation to complete..."
