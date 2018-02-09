@@ -20,7 +20,7 @@
 
 HOME_PATH=$(cd ~/ && pwd)
 LINUX_ARCH="$(lscpu | grep 'Architecture' | awk -F\: '{ print $2 }' | tr -d ' ')"
-POPPLER_SOURCE="http://poppler.freedesktop.org/poppler-0.62.0.tar.xz"
+POPPLER_SOURCE="http://poppler.freedesktop.org/poppler-0.49.0.tar.xz"
 FONTFORGE_SOURCE="https://github.com/fontforge/fontforge.git"
 PDF2HTMLEX_SOURCE="https://github.com/coolwanglu/pdf2htmlEX.git"
 
@@ -35,8 +35,8 @@ apt-get install -qq -y pkg-config libopenjpeg-dev libfontconfig1-dev libfontforg
 
   echo "Downloading poppler via source ..."
 wget "$POPPLER_SOURCE"
-tar -xvf poppler-0.62.0.tar.xz
-cd poppler-0.62.0/
+tar -xvf poppler-0.49.0.tar.xz
+cd poppler-0.49.0/
 ./configure --enable-xpdf-headers
 make
 make install
