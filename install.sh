@@ -73,6 +73,6 @@ else
   echo "********************************************************************"
   echo "This script currently doesn't supports $LINUX_ARCH Linux archtecture"
 fi
-# export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH 
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH 
 echo "----------------------------------"
 echo "Restart your Ubuntu session for installation to complete..."
